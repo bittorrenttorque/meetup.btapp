@@ -8,7 +8,7 @@
 	BtappMeetup = Backbone.Model.extend({
 		initialize: function() {
 			this.btapp = new Btapp;
-			this.btapp.live('torrent *', function(peer) {
+			this.btapp.live('torrent * peer *', function(peer) {
 				this.trigger('meetup:peer', peer);
 			}, this);
 			this.btapp.live('add', function(add) {
