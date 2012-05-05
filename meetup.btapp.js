@@ -16,7 +16,9 @@
 				this.trigger('meetup:meetup', info_hash);
 				add.torrent(get_magnet_link(info_hash));
 			}, this);
-			this.btapp.connect();
+			this.btapp.connect({
+				queries: ['btapp/add/torrent/', 'btapp/torrent/all/*/peer/all/*/']
+			});
 		}
 	});	
 }).call(this);
